@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+                <h1 class="text-center display-4 mt-4">Eliminar a {{ user.first_name }} {{ user.last_name }}</h1>
+         <div class="text-center" >
+          <a class="btn btn-primary text-center mt-4" href="{{url_for('users')}}" >Volver a la lista de usuarios</a>
+
+          <a class="btn btn-danger text-center mt-4" href="{{ url_for('delete',id=user.id) }}?_method=DELETE" >Eliminar usuario</a>
+
+        </div>>
+
+
+{% endblock %}

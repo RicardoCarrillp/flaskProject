@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+            <h1 class="text-center display-4 mt-4">Usuarios</h1>
+
+
+    <a class="btn btn-success text-center mt-4" href="{{ url_for('new') }}">Añadir usuario</a>
+
+</div>
+
+
+<br>
+
+<div class="row">
+       {% for user in users %}
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="text-center card-title">{{ user.first_name }}  {{ user.last_name }}</h5>
+        <p class="text-center card-text">Mi numero telefonico es : {{ user.phone }}
+         <div class="text-center" >
+          <a class="btn btn-primary text-center mt-4" href="{{url_for('edit',id=user.id)}}" >Editar usuario</a>
+
+          <a class="btn btn-danger text-center mt-4" href="{{ url_for('delete',id=user.id) }}" >Eliminar usuario</a>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+                 {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+            <h1 class="text-center display-4 mt-4">Añadir usuario</h1>
+    <form action="{{ url_for('new') }}" method="post">
+
+
+  <div class="mb-3 row">
+    <label for="inputFN" class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+      <input type="text" name="first_name" id="inputFN">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputLN" class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-10">
+      <input type="text" name="last_name" id="inputLN">
+    </div>
+  </div>
+
+      <div class="mb-3 row">
+    <label for="inputPN" class="col-sm-2 col-form-label">Numero telefonico</label>
+    <div class="col-sm-10">
+      <input type="number" name="phone" id="inputPN">
+    </div>
+  </div>
+           <button  type="submit" value="add users" class="btn btn-success text-center mt-4">Crear usuario</button>
+
+    </form>
+{% endblock %}
